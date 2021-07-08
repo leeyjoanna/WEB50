@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block body %}
+
+    {% if hasSimilar %}
+    <h3>No entries found but here are similar ones: </h3>
+    <ul>
+        {% for item in similarList %}
+            <li> <a href="./{{ item }}"> {{ item }} </a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h3> No entries found.</h3>
+    {% endif %}
+
+
+{% endblock %}
