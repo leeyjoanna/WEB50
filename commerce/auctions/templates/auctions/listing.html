@@ -1,0 +1,63 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div>
+    <h2>{{ listing.item_name }}</h2>
+    <h4>Highest bid: {{ listing.item_price }}</h4>
+    <p>{{ listing.item_description }}</p>
+</div>
+-----------
+<div>
+    <h3>Bid history:</h3>
+    {% if bids %}
+        {% for bid in bids %}
+        <ul>
+            <li>{{ bid.item_bidder}}: {{ bid.bid_amount }}</li>
+        </ul>
+            {% endfor %}
+        {% else %}
+        <p>No bids at this time. </p>
+    {% endif %}
+    <br><br>
+    <h3>Comments:</h3>
+    {% if comments %}
+        {% for comment in comments %}
+        <ul>
+            <li>{{ comment.commenter}}: {{ comment.comment }}</li>
+        </ul>
+            {% endfor %}
+        {% else %}
+        <p>No comments at this time. </p>
+    {% endif %}
+</div>
+<div>
+    <form action="./{{ listing.id }}-comment" method="POST">
+        {% csrf_token %}
+        <input type="submit" name="commentButton" value="Comment"> 
+    </form>
+{% if isClosed %}
+    <h3>This listing is closed! Item has been sold :)</h3>
+    {% else %}
+        {% if isOwner %}
+        <br> <form action="{% url 'close-listing' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" id="item" name="item" value="{{ listing.id }}">
+                <input type="submit" name="closeListing" value="Close Listing">
+            </form>
+            {% else %}
+            <br>
+            <form action="./{{ listing.id }}-bid" method="POST">
+                {% csrf_token %}
+                <input type="submit" name="bid" value="Bid">
+            </form>
+            <br>
+            <form action="{% url 'watchlist' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" id="item" name="item" value="{{ listing.id }}"> 
+                <input type="submit" name="addWatchList" value="Add to Watchlist">
+            </form>
+        {% endif %}
+{% endif %}
+</div>
+
+{% endblock %}

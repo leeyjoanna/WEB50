@@ -1,0 +1,25 @@
+{% extends "auctions/layout.html" %}
+
+<title>Comment</title>
+
+{% block body %}
+    <h1>Comment on listing</h1>
+    {% if message %}
+        <p> {{ message }}</p>
+    {% endif %}
+
+    {% if listing %}
+    <h3>Name: {{ listing.item_name }}</h3>  
+    <p>Description: {{ listing.item_description }}</p>
+    <p>Price: {{ listing.item_price }}</p><br>
+
+    <form action="{% url 'new-comment' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" id="item" name="item" value="{{ listing.id }}"> 
+        <input type="submit" value="submit comment"> 
+    </form>
+    {% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "auctions/layout.html" %}
+
+<title>Watch List</title>
+
+{% block body %}
+    <h2>Watch List: </h2>
+    {% if message %}
+        {{ message }}
+    {% endif %}
+
+    {% if watchlist %}
+        {% for listing in watchlist %}
+        <ul>
+            <li><a href= "./{{ listing.watch_item.id }}"> {{ listing.watch_item }} </a></li>
+        </ul>
+        {% endfor %}
+
+        {% else %}
+        <p>No items on your watchlist right now!</p>
+    
+    {% endif %}
+    
+{% endblock %}
