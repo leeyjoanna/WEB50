@@ -1,4 +1,4 @@
-# WEB50
+# WEB50 extension from Harvard x edX CS50
 * Project1: wiki
   * online encyclopedia similar to wikipedia
 * Project2: commerce
