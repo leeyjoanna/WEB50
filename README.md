@@ -1,9 +1,9 @@
-# WEB50
-* Project1: wiki
-  * online encyclopedia similar to wikipedia
-* Project2: commerce
-  * ebay like webpage to post listing, bid, add to 'watchlist'
-* Project3: mail
-  * front-end for an email client, send/receive emails via API calls
-* Project4: network
-  * twitter like social media site to make/like posts and follow others
+# WEB50: project 1 Wiki
+[Specifications](https://cs50.harvard.edu/web/2020/projects/1/wiki/)
+* entry page
+* index page
+* search
+* new page
+* edit page
+* random page
+* markdown to HTML conversion 
