@@ -1,9 +1,8 @@
-# WEB50
-* Project1: wiki
-  * online encyclopedia similar to wikipedia
-* Project2: commerce
-  * ebay like webpage to post listing, bid, add to 'watchlist'
-* Project3: mail
-  * front-end for an email client, send/receive emails via API calls
-* Project4: network
-  * twitter like social media site to make/like posts and follow others
+# WEB50: project 2 commerce
+[Specifications](https://cs50.harvard.edu/web/2020/projects/2/commerce/)
+* create listing
+* active listings page
+* listing pages
+* watchlist
+* utilize 3+ models
+* utilize Django admin interface 
