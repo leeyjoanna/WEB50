@@ -1,9 +1,8 @@
-# WEB50
-* Project1: wiki
-  * online encyclopedia similar to wikipedia
-* Project2: commerce
-  * ebay like webpage to post listing, bid, add to 'watchlist'
-* Project3: mail
-  * front-end for an email client, send/receive emails via API calls
-* Project4: network
-  * twitter like social media site to make/like posts and follow others
+# WEB50: project 3 mail
+[Specifications](https://cs50.harvard.edu/web/2020/projects/3/mail/)
+* send mail
+* view email
+* mailbox: inbox, sent, archived
+* archive/unarchive
+* reply
+
